@@ -1,6 +1,22 @@
-(function () {
-    var es = document.createElement('script'); es.type = 'text/javascript'; es.async = true;
-    es.src = ('https:' == document.location.protocol ? 'https://' : 'http://developers.') + 'eatstreet.com/api-js-sdk/js/sdk-remote.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(es, s);
-})();
-ESApi.init('c57e472ad5d59fb4');
+$(function () {
+
+    $("#submit").click(function () {
+
+        var queryURL = "https://api.eatstreet.com/publicapi/v1/restaurant/search-test?access-token={c57e472ad5d59fb4}?method=delivery";
+
+       
+
+        var streetAddress = $("#userStreet").val().trim();
+
+        queryURL = queryURL + streetAddress
+
+        console.log(queryURL)
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+        });
+    });
+});
