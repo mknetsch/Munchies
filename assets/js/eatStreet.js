@@ -1,16 +1,18 @@
 $(function () {
 
+
+
     $("#submit").click(function () {
 
-        
+
 
         var queryURL = "https://api.eatstreet.com/publicapi/v1/restaurant/search?method=delivery";
 
-       var apiKey = "&access-token=0f01993a72128534"
+        var apiKey = "&access-token=0f01993a72128534"
 
-        var userAddress = "&street-address="+$("#userStreet").val()+$("#userCity").val()+", "+$("#userState").val() ;
+        var userAddress = "&street-address=" + $("#userStreet").val() + $("#userCity").val() + ", " + $("#userState").val();
 
-        queryURL = encodeURI( queryURL + userAddress + apiKey )
+        queryURL = encodeURI(queryURL + userAddress + apiKey)
 
         console.log(queryURL)
 
@@ -19,11 +21,16 @@ $(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-
-            for(i = 0; i < response.restaurants.length; i++ ){
-            console.log(response.restaurants[i].name)
-            var restPanel = $("<div>")
-            restPanel.attr("class","ui segments")
+            $("#restPanel").attr("class", "ui segments")
+            for (i = 0; i < response.restaurants.length; i++) {
+                console.log(response.restaurants[i].name)
+                var restSeg = $("<div>")
+                restSeg.attr("class", "ui segment")
+                var restName = $("<p>")
+                restName.text(response.restaurants[i].name)
+                $(restSeg).append(restName)
+                var restInfo = $("ui segments")
+                $("#restPanel").append(restSeg)
             }
 
         });
