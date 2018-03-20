@@ -1,3 +1,7 @@
 body {
     background-image: URL("../images/weed-background.jpg");
 }
+
+.report {
+    color: green;
+}
