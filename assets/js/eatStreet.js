@@ -8,9 +8,7 @@ $(function () {
 
        var apiKey = "&access-token=0f01993a72128534"
 
-        var fullAddress = $("#userStreet").val().trim()
-
-        var userAddress = "&street-address="+fullAddress;
+        var userAddress = "&street-address="+$("#userStreet").val()+$("#userCity").val()+", "+$("#userState").val() ;
 
         queryURL = encodeURI( queryURL + userAddress + apiKey )
 
@@ -22,9 +20,11 @@ $(function () {
         }).then(function (response) {
             console.log(response);
 
-            for(i = 0; i < response.restaurants.length; i++ )
+            for(i = 0; i < response.restaurants.length; i++ ){
             console.log(response.restaurants[i].name)
-
+            var restPanel = $("<div>")
+            restPanel.attr("class","ui segments")
+            }
 
         });
     });
