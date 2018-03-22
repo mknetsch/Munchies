@@ -21,18 +21,33 @@ $(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
+            var restaurants = response.restaurants
             $("#restPanel").attr("class", "ui segments")
-            for (i = 0; i < response.restaurants.length; i++) {
-                console.log(response.restaurants[i].name)
+            for (i = 0; i < restaurants.length; i++) {
+
+                console.log(restaurants[i].name)
                 var restSeg = $("<div>")
                 restSeg.attr("class", "ui segment")
-                var restName = $("<p>")
-                restName.text(response.restaurants[i].name)
+
+                var restName = $("<button>")
+                restName.text(restaurants[i].name)
+                restName.attr("id", "restName")
+                restName.attr("index",$(restaurants).index(restaurants[i]))
                 $(restSeg).append(restName)
-                var restInfo = $("ui segments")
+
                 $("#restPanel").append(restSeg)
             }
-
+            
         });
+        $("#restPanel").click("button", function (event) {
+                
+            var nestSegment = $("<div>")
+            nestSegment.attr("class", "ui segments")
+            $(event.target).parent().append(nestSegment)
+
+            var restInfo = $("<div>")
+            restInfo.attr("class", "ui segment")
+            $(nestSegment).append($(restInfo))
+        })
     });
 });
