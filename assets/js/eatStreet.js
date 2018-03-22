@@ -10,11 +10,11 @@ $(function () {
 
         var apiKey = "&access-token=0f01993a72128534"
 
-        var userAddress = "&street-address=" + $("#userStreet").val() + $("#userCity").val() + ", " + $("#userState").val();
+        var userAddress = "&street-address=" + $("#userStreet").val().trim() + $("#userCity").val().trim() + ", " + $("#userState").val().trim();
 
         queryURL = encodeURI(queryURL + userAddress + apiKey)
 
-        console.log(queryURL)
+        
 
         $.ajax({
             url: queryURL,
