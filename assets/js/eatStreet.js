@@ -37,21 +37,17 @@ $(function () {
 
                 $("#restPanel").append(restSeg)
             }
-
-
-
-            $(document).click("button", function () {
-
-                alert($().index(this))
-                
-                // var nestSegment = $("<div>")
-                // nestSegment.attr("class", "ui segments")
-                // $("#restName").append(nestSegment)
-
-                // var restInfo = $("<div>")
-                // restInfo.attr("class", "ui segment")
-                // $(nestSegment).append($(restInfo))
-            })
+            
         });
+        $("#restPanel").click("button", function (event) {
+                
+            var nestSegment = $("<div>")
+            nestSegment.attr("class", "ui segments")
+            $(event.target).parent().append(nestSegment)
+
+            var restInfo = $("<div>")
+            restInfo.attr("class", "ui segment")
+            $(nestSegment).append($(restInfo))
+        })
     });
 });
