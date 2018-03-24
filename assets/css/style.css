@@ -2,10 +2,6 @@ body {
     background-image: URL("../images/weed-background.jpg");
 }
 
-.ui.modal{
-
-
-}
 #local {
     color:rgb(116, 9, 116);
     text-align: right;
@@ -45,9 +41,8 @@ text-align: center;
 
 .inputPanel {
     color: black;
-    background: black
-
-
+    background: black;
+    font-family: 'Anton', sans-serif;
 }
 
 
