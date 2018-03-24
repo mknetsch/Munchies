@@ -44,7 +44,15 @@ $(function () {
 
                 var restInfo = $("<div>")
                 restInfo.attr("class", "ui segment")
-                $(nestSegment).append($(restInfo))
+                var restOpen = $("<p>")
+                if (restaurants[i].open == true){
+                    restOpen.text("Open Now!")
+                } else {
+                    restOpen.text("Closed Now")
+                }
+                $(restInfo).append(restOpen)
+
+                $(nestSegment).append(restInfo)
 
                 $("#restPanel").append(restSeg)
             }
