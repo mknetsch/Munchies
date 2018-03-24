@@ -4,44 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Munchies</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="assets/js/eatStreet.js"></script>
-
+    <script src="assets/js/app.js"></script>
 </head>
 
 <body>
+
+    <div class="ui modal">
+        <div class="header">Verify Your Age</div>
+        <div class="content">
+            <div class="ui labeled input">
+                <div class="ui label">
+                    (MM/DD/YYYY)
+                </div>
+                <input type="text" placeholder="Birthday" class="birthday">
+            </div>
+        </div>
+        <div class="actions">
+            <!-- <div class="ui approve button">Enter</div> -->
+            <div class="ui button">Check Age</div>
+            <!-- <div class="ui cancel button">Exit Site</div> -->
+        </div>
+    </div>
+
     <div class="ui grid">
         <div class="four wide column"></div>
         <div class="four wide column">
-            <div class="ui raised segment">
-                <h1>Cannabis Reports</h1>
+            <div class="report">
+                <div class="ui raised segment">
+                    <h1>Cannabis Reports</h1>
+                </div>
             </div>
         </div>
         <div class="four wide column">
             <div class="ui raised segment">
-                <h1>EatStreet</h1>
+                <div class="food">
+                    <h1>EatStreet</h1>
+                </div>
             </div>
         </div>
         <div class="four wide column"></div>
+        <!--break-->
         <div class="four wide column"></div>
         <div class="eight wide column">
             <div class="ui raised segment">
-                Location Information
-                <br>
-                <span>Address: <input type="text" name="address" id="userStreet"></span>
-                <span>City: <input type="text" name="city" id="userCity"></span>
-                <br>
-                <span>State: <input type="text" name="state" id="userState"></span>
-                <span>Zipcode: <input type="text" name="zip" id="userZip" maxlength="5"></span>
+                <div class="inputPanel">
+                   <a id="local">Location Information</a> 
+                    <br>
+                    <span>Address:
+                        <input type="text" name="address" id="userStreet">
+                    </span>
+                    <span>City:
+                        <input type="text" name="city" id="userCity">
+                    </span>
+                    <br>
+                    <span>State:
+                        <input type="text" name="state" id="userState">
+                    </span>
+                    <span>Zipcode:
+                        <input type="text" name="zip" id="userZip" maxlength="5">
+                    </span>
+                    <br>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
             </div>
         </div>
         <div class="four wide column"></div>
+        <!--break-->
+        <div class="four wide column"></div>
+        <div class="eight wide column">
+            <div id="restPanel"></div>
+
+        </div>
+        <div class="four wide column"></div>
+
+
     </div>
+
 </body>
 
 </html>

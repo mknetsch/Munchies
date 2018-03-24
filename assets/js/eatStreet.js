@@ -1,6 +1,53 @@
-(function () {
-    var es = document.createElement('script'); es.type = 'text/javascript'; es.async = true;
-    es.src = ('https:' == document.location.protocol ? 'https://' : 'http://developers.') + 'eatstreet.com/api-js-sdk/js/sdk-remote.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(es, s);
-})();
-ESApi.init('c57e472ad5d59fb4');
+$(function () {
+
+
+
+    $("#submit").click(function () {
+
+
+
+        var queryURL = "https://api.eatstreet.com/publicapi/v1/restaurant/search?method=delivery";
+
+        var apiKey = "&access-token=0f01993a72128534"
+
+        var userAddress = "&street-address=" + $("#userStreet").val() + $("#userCity").val() + ", " + $("#userState").val();
+
+        queryURL = encodeURI(queryURL + userAddress + apiKey)
+
+        console.log(queryURL)
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            var restaurants = response.restaurants
+            $("#restPanel").attr("class", "ui segments")
+            for (i = 0; i < restaurants.length; i++) {
+
+                console.log(restaurants[i].name)
+                var restSeg = $("<div>")
+                restSeg.attr("class", "ui segment")
+
+                var restName = $("<button>")
+                restName.text(restaurants[i].name)
+                restName.attr("id", "restName")
+                restName.attr("index",$(restaurants).index(restaurants[i]))
+                $(restSeg).append(restName)
+
+                $("#restPanel").append(restSeg)
+            }
+            
+        });
+        $("#restPanel").click("button", function (event) {
+                
+            var nestSegment = $("<div>")
+            nestSegment.attr("class", "ui segments")
+            $(event.target).parent().append(nestSegment)
+
+            var restInfo = $("<div>")
+            restInfo.attr("class", "ui segment")
+            $(nestSegment).append($(restInfo))
+        })
+    });
+});
