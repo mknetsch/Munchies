@@ -32,7 +32,6 @@ $(function () {
                 var restName = $("<p>")
                 restName.text(restaurants[i].name)
                 restName.attr("class", "restName")
-                restName.attr("index", $(restaurants).index(restaurants[i]))
                 $(restSeg).append(restName)
 
                 var nestSegment = $("<div>")

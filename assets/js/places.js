@@ -39,9 +39,20 @@ $(document).ready(function () {
                     report.attr("class", "ui segment")
                     var dispensaryName = $("<p>")
                     dispensaryName.text(dispensary.results[i].name)
-                    dispensaryName.attr("id", "dispensaryName")
+                    dispensaryName.attr("class", "dispensaryName")
                     $(report).append(dispensaryName);
-                    // dispensaryName.attr("index", $(dispensary).index(dispensary[i]))
+
+                    var nestSegment = $("<div>")
+                    nestSegment.attr("class", "ui segments")
+                    nestSegment.attr("class", "nestSegment")
+                    nestSegment.hide()
+                    $(report).append(nestSegment)
+
+                    var weedInfo = $("<div>")
+                    weedInfo.attr("class","ui segment")
+                    $(nestSegment).append(weedInfo)
+                    
+
                     $("#weedPanel").append(report)
                 }
 
@@ -49,16 +60,9 @@ $(document).ready(function () {
 
 
             })
-            $("#weedPanel").click("button", function (event) {
-                var nestedSegment = $("<div>")
-                nestedSegment.attr("class", "ui raised segment")
-                $(event.target).parent().append(nestedSegment)
-
-                var weedInfo = $("<div>")
-                weedInfo.attr("class", "ui raised segment")
-                $(nestedSemgnet).append($(weedInfo))
-
-            })
+            $(document).on("click", ".dispensaryName", function (event) {
+                $(this).next().toggle()
+            });
         });
-    })
+    });
 });
