@@ -29,6 +29,34 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
+
+                var dispensary = response.dispensary
+                $("#weedPanel").attr("class", "ui raised segments")
+                for (i = 0; i < dispensary.length; i++){
+                    
+                    var report = $("<div>")
+                    report.attr("class", "ui raised segment")
+
+                    var dispensaryName = $("<button>")
+                    dispensaryName.text(dispensary[i].name)
+                    dispensaryName.attr("id", "dispensaryName")
+                    dispensaryName.attr("index", $(dispensary).index(dispensary[i]))
+                    $("#weedPanel").append(report)
+                }
+
+                  
+
+                    
+            })
+            $("#weedPanel").click("button", function (event) {
+                var nestedSegment = $("<div>")
+                nestedSegment.attr("class", "ui raised segment")
+                $(event.target).parent().append(nestedSegment)
+
+                var weedInfo = $("<div>")
+                weedInfo.attr("class", "ui raised segment")
+                $(nestedSemgnet).append($(weedInfo))
+
             })
         });
     })
