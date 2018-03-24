@@ -33,7 +33,7 @@ $(document).ready(function () {
 
                 var dispensary = response;
                 $("#weedPanel").attr("class", "ui segments");
-                for (i = 0; i < 5; i++) {
+                for (i = 0; i < 10; i++) {
                     console.log(dispensary.results[i].name);
                     var report = $("<div>")
                     report.attr("class", "ui segment")
@@ -41,15 +41,12 @@ $(document).ready(function () {
                     dispensaryName.text(dispensary.results[i].name)
                     dispensaryName.attr("class", "dispensaryName")
                     $(report).append(dispensaryName);
-<<<<<<< HEAD
                     // dispensaryName.attr("index", $(dispensary).index(dispensary[i]))
-                    $("#weedPanel").append(report)
 
 
-                   
-                }
-=======
->>>>>>> Test
+
+
+
 
                     var nestSegment = $("<div>")
                     nestSegment.attr("class", "ui segments")
@@ -58,11 +55,26 @@ $(document).ready(function () {
                     $(report).append(nestSegment)
 
                     var weedInfo = $("<div>")
-                    weedInfo.attr("class","ui segment")
+                    weedInfo.attr("class", "ui segment")
                     $(nestSegment).append(weedInfo)
-                    
+
+                    var weedOpen = $("<p>")
+                    if (dispensary.results[i].opening_hours.open_now == true) {
+                        weedOpen.text("Open Now!")
+                    } else {
+                        weedOpen.text("Closed!")
+                    }
+                    $(weedInfo).append(weedOpen)
+
+                    var weedAddress = $("<p>")
+                    weedAddress.attr("class", weedAddress)
+                    weedAddress.text(dispensary.results[i].formatted_address)
+                    $(weedInfo).append(weedAddress);
 
                     $("#weedPanel").append(report)
+
+
+
                 }
 
 
