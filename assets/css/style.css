@@ -19,7 +19,6 @@ h1 {
 
 .report {
     padding: 0px 0px 0px 0px;
-    background:black;
     color: rgb(82, 143, 82);
     background-color: grey;
     font-family: 'Anton', sans-serif;
@@ -35,27 +34,8 @@ h1 {
 color: rgb(80, 80, 218);
 font-family: 'Anton', sans-serif;
 text-align: center;
-
-
 }
 
 .inputPanel {
-    color: black;
-    background: black;
     font-family: 'Anton', sans-serif;
-}
-
-
-
-.eight.wide.column {
-    color: yellow
-}
-
-
-
-.eight.wide.column {
-    color: yellow
-}
-.eight.wide.column {
-    color: yellow
 }
