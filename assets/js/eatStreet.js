@@ -38,7 +38,9 @@ $(function () {
                 var nestSegment = $("<div>")
                 nestSegment.attr("class", "ui segments")
                 nestSegment.attr("class", "nestSegment")
+                nestSegment.hide()
                 $(restSeg).append(nestSegment)
+
 
                 var restInfo = $("<div>")
                 restInfo.attr("class", "ui segment")
@@ -48,8 +50,8 @@ $(function () {
             }
 
 
-            $(".restPanel").on("click",".restName",function (event) {
-                $(".restName").find(".nestSetment").toggle()
+            $(document).on("click",".restName",function (event) {
+                $(this).next().toggle()
             })
         });
     });

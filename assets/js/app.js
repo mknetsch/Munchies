@@ -1,13 +1,13 @@
 $(function () {
 
 // Age Check Modal
-    function modals() {
-        $('.ui.modal')
-            .modal('setting', 'closable', false)
-            .modal('show')
-            ;
-    };
-    modals();
+    // function modals() {
+    //     $('.ui.modal')
+    //         .modal('setting', 'closable', false)
+    //         .modal('show')
+    //         ;
+    // };
+    // modals();
 
     $(".ui.button").on("click", function () {
         var ageImput = $(".birthday").val().trim();
