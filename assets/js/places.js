@@ -32,14 +32,15 @@ $(document).ready(function () {
                 console.log(response);
 
                 var dispensary = response;
-                $("#weedPanel").attr("class", "ui raised segments");
+                $("#weedPanel").attr("class", "ui segments");
                 for (i = 0; i < 5; i++) {
                     console.log(dispensary.results[i].name);
                     var report = $("<div>")
-                    report.attr("class", "ui raised segment")
-                    var dispensaryName = $("<button>")
+                    report.attr("class", "ui segment")
+                    var dispensaryName = $("<p>")
                     dispensaryName.text(dispensary.results[i].name)
                     dispensaryName.attr("id", "dispensaryName")
+                    $(report).append(dispensaryName);
                     // dispensaryName.attr("index", $(dispensary).index(dispensary[i]))
                     $("#weedPanel").append(report)
                 }
