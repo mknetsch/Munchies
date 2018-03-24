@@ -1,5 +1,7 @@
 $(function () {
 
+
+
     // Age Check Modal
     function modals() {
         $('.ui.modal')
@@ -8,7 +10,6 @@ $(function () {
             ;
     };
     modals();
-   
 
     $(".ui.button").on("click", function () {
         var ageInput = $(".birthday").val().trim();
