@@ -2,7 +2,62 @@ body {
     background-image: URL("../images/weed-background.jpg");
 }
 
-.report {
-    color: green;
+.ui.modal{
+
+
+}
+#local {
+    color:rgb(116, 9, 116);
+    text-align: right;
+    text-align: center
+    
 }
 
+h1 {
+    background-color: black;
+    margin: 0;
+    padding: 10px;
+    border-width: 2px;
+
+}
+
+.report {
+    padding: 0px 0px 0px 0px;
+    background:black;
+    color: rgb(82, 143, 82);
+    background-color: grey;
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+}
+
+.ui.grid {
+    font-family: 'Anton', sans-serif;
+
+    }
+
+.food {
+color: rgb(80, 80, 218);
+font-family: 'Anton', sans-serif;
+text-align: center;
+
+
+}
+
+.inputPanel {
+    color: black;
+    background: black
+    font-family: 'Anton', sans-serif;
+
+}
+
+.eight.wide.column {
+    color: yellow
+}
+
+.retry {
+    margin-left: 50px;
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-weight: 600;
+}

@@ -29,6 +29,7 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
+
                 var dispensary = response.dispensary
                 $("#weedPanel").attr("class", "ui raised segments")
                 for (i = 0; i < dispensary.length; i++){
@@ -55,6 +56,7 @@ $(document).ready(function () {
                 var weedInfo = $("<div>")
                 weedInfo.attr("class", "ui raised segment")
                 $(nestedSemgnet).append($(weedInfo))
+
             })
         });
     })
