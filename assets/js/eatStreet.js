@@ -14,7 +14,7 @@ $(function () {
 
         queryURL = encodeURI(queryURL + userAddress + apiKey)
 
-        
+
 
         $.ajax({
             url: queryURL,
@@ -47,9 +47,10 @@ $(function () {
                 $("#restPanel").append(restSeg)
             }
 
+
+            $(".restPanel").on("click",".restName",function (event) {
+                $(".restName").find(".nestSetment").toggle()
+            })
         });
-        $("#restPanel").click(function(event){
-            console.log(event)
-        })
     });
 });
