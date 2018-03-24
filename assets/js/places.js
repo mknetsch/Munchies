@@ -37,7 +37,7 @@ $(document).ready(function () {
                     report.attr("class", "ui raised segment")
 
                     var dispensaryName = $("<button>")
-                    dispensaryName.text(restaurants[i].name)
+                    dispensaryName.text(dispensary[i].name)
                     dispensaryName.attr("id", "dispensaryName")
                     dispensaryName.attr("index", $(dispensary).index(dispensary[i]))
                     $("#weedPanel").append(report)
