@@ -51,6 +51,7 @@ text-align: center;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .eight.wide.column {
     color: yellow
 =======
@@ -62,4 +63,9 @@ text-align: center;
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
     font-weight: 600;
 >>>>>>> Test
+=======
+
+.eight.wide.column {
+    color: yellow
+>>>>>>> a6a389b488819379f500e5ed9f89c8767b6a0a5b
 }
