@@ -43,6 +43,9 @@ $(document).ready(function () {
                     $(report).append(dispensaryName);
                     // dispensaryName.attr("index", $(dispensary).index(dispensary[i]))
                     $("#weedPanel").append(report)
+
+
+                   
                 }
 
 
