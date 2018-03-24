@@ -41,24 +41,42 @@ $(function () {
                 nestSegment.hide()
                 $(restSeg).append(nestSegment)
 
-
                 var restInfo = $("<div>")
                 restInfo.attr("class", "ui segment")
                 var restOpen = $("<p>")
-                if (restaurants[i].open == true){
+                restOpen.attr("class", "restOpen")
+                if (restaurants[i].open == true) {
                     restOpen.text("Open Now!")
                 } else {
                     restOpen.text("Closed Now")
                 }
                 $(restInfo).append(restOpen)
 
+                var restURL = $("<a>")
+                restURL.attr("href", restaurants[i].url)
+                restURL.attr("target", "_blank")
+                restURL.attr("class", "restURL")
+                restURL.text("Click here!")
+                $(restInfo).append(restURL)
+
+                var restLocate = $("<p>")
+                restLocate.attr("class", "restLocate")
+                restLocate.text(restaurants[i].streetAddress + ", " + restaurants[i].city + ", " + restaurants[i].state + " " + restaurants[i].zip)
+                $(restInfo).append(restLocate)
+
+                var restWait = $("<p>")
+                restWait.attr("class","restWait")
+                restWait.text("Wait time: "+restaurants[i].minWaitTime+" mins - "+restaurants[i].maxWaitTime+" mins")
+                $(restInfo).append(restWait)
+
                 $(nestSegment).append(restInfo)
 
                 $("#restPanel").append(restSeg)
+
             }
 
 
-            $(document).on("click",".restName",function (event) {
+            $(document).on("click", ".restName", function (event) {
                 $(this).next().toggle()
             })
         });
