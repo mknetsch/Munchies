@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.0/dist/semantic.min.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
@@ -51,7 +52,6 @@
             <div class="ui raised segment">
                 <div class="food">
                     <h1>EatStreet</h1>
-                    <p>Get Delivery!</p>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="eight wide column">
             <div class="ui raised segment">
                 <div class="inputPanel">
-                    Location Information
+                   <a id="local">Location Information</a> 
                     <br>
                     <span>Address:
                         <input type="text" name="address" id="userStreet">
@@ -83,12 +83,15 @@
         </div>
         <div class="four wide column"></div>
         <!--break-->
-        <div class="four wide column"></div>
+        <div class="eight wide column">
+            <div id="weedPanel"></div>
+
+        </div>
         <div class="eight wide column">
             <div id="restPanel"></div>
 
         </div>
-        <div class="four wide column"></div>
+        
 
 
     </div>
