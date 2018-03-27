@@ -29,13 +29,16 @@ $(function () {
             if (age >= 21) {
                 $(".actions").html("<div class='ui approve button'>Enter</div>")
                 $(".retry").html("Proceed")
+                $('#content-page').css('background-color', 'green');
             }
             else if ((age < 21) && (age > 0)) {
                 $(".actions").html('<div class="ui button"> <a href="https://www.youtube.com/watch?v=NAfQsn4i0gM">Exit Site</div>')
                 $('.retry').html("You are not old enough")
+                $('#content-page').css('background-color', 'red')
             }
             else {
                 $('.retry').html("Invalid date, try again");
+                $('#content-page').css('background-color', 'red')
             };
         };
     })
@@ -53,18 +56,23 @@ $(function () {
         }
         else {
             $('.retry').html("Invalid date, try again");
+            $('#content-page').css('background-color', 'red')
         };
         if (age >= 21) {
-            $(".actions").html("<div class='ui approve button'>Enter</div>")
-            $(".retry").html("Proceed")
+            $(".actions").html("<div class='ui approve button'>Enter</div>");
+            $(".retry").html("Proceed");
+            $('#content-page').css('background-color', 'green');
         }
         else if ((age < 21) && (age > 0)) {
             $(".actions").html('<div class="ui button"> <a href="https://www.youtube.com/watch?v=NAfQsn4i0gM">Exit Site</div>')
-            $('.retry').html("You are not old enough")
+            $('.retry').html("You are not old enough");
+            $('#content-page').css('background-color', 'red');
         }
         else {
             $('.retry').html("Invalid date, try again");
+            $('#content-page').css('background-color', 'red');
         };
     });
 })
+
 //   End Age Check Modal
