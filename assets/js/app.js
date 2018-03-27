@@ -1,5 +1,12 @@
 $(function () {
 
+// CORS Bypass
+jQuery.ajaxPrefilter(function(options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+ });
+
     // checks local storage to see if the user is over 21. if not then it runs the age checker modal.
     var locAge = localStorage.getItem('age');
     if (locAge >= 21) {
