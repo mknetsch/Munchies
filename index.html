@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="assets/js/eatStreet.js"></script>
     <script src="assets/js/places.js"></script>
     <script src="assets/js/app.js"></script>
@@ -19,7 +20,7 @@
 </head>
 
 <body>
-
+<!-- Age verification Modal -->
     <div class="ui modal">
         <div class="header">Verify Your Age</div>
         <div class="content" id="content-page">
@@ -31,7 +32,6 @@
             <div class="retry">
             </div>
             </div>
-
         </div>
         <div class="actions">
             <div class="ui button">Check Age</div>
@@ -40,7 +40,7 @@
  
  
 
-
+<!-- Grids from Semantic -->
     <div class="ui grid">
         <div class="four wide column"></div>
         <div class="four wide column">
@@ -63,7 +63,7 @@
         <div class="eight wide column">
             <div class="ui raised segment">
                 <div class="inputPanel">
-                    Location Information
+                    <a id="local">Location Information</a>
                     <br>
                     <span>Address:
                         <input type="text" name="address" id="userStreet">
