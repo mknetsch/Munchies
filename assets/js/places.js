@@ -59,7 +59,10 @@ $(document).ready(function () {
                     $(nestSegment).append(weedInfo)
 
                     var weedOpen = $("<p>")
+
+
                     if (dispensary.results[i].opening_hours.open_now == true) {
+
                         weedOpen.text("Open Now!")
                     } else {
                         weedOpen.text("Closed!")
@@ -70,6 +73,7 @@ $(document).ready(function () {
                     weedAddress.attr("class", weedAddress)
                     weedAddress.text(dispensary.results[i].formatted_address)
                     $(weedInfo).append(weedAddress);
+
 
                     $("#weedPanel").append(report)
 
