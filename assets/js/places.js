@@ -51,6 +51,14 @@ $(document).ready(function () {
                     var weedInfo = $("<div>")
                     weedInfo.attr("class","ui segment")
                     $(nestSegment).append(weedInfo)
+
+                    var weedOpen = $("<p>")
+                    if (dispensary.results[i].opening_hours.open_now == true){
+                        weedOpen.text("Open Now!")
+                    } else {
+                        weedOpen.text("Closed!")
+                    }
+                    $(weedInfo).append(weedOpen)
                     
 
                     $("#weedPanel").append(report)
