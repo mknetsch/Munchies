@@ -1,13 +1,10 @@
 body {
-    background-image: URL("../images/weed-background.jpg");
+    background-image: URL("../images/bwleaf.jpg");
 }
 
 #local {
     color:rgb(116, 9, 116);
-    text-align: right;
-    text-align: center
-    
-}
+    }
 
 h1 {
     background-color: black;
@@ -19,8 +16,8 @@ h1 {
 
 .report {
     padding: 0px 0px 0px 0px;
-    color: rgb(82, 143, 82);
     background-color: grey;
+    color: rgb(82, 143, 82);
     font-family: 'Anton', sans-serif;
     text-align: center;
 }
@@ -36,6 +33,16 @@ font-family: 'Anton', sans-serif;
 text-align: center;
 }
 
-.inputPanel {
-    font-family: 'Anton', sans-serif;
+.input.panel{
+    background: grey;
+    color: white;
+    padding: 10px, teal;
 }
+
+.ui.raised.segment{
+    background:grey;
+}
+ 
+
+
+
