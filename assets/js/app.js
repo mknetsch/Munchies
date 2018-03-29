@@ -1,17 +1,18 @@
 $(function () {
 
-// CORS Bypass
-jQuery.ajaxPrefilter(function(options) {
-    if (options.crossDomain && jQuery.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-    }
- });
+    // CORS Bypass
+    jQuery.ajaxPrefilter(function (options) {
+        if (options.crossDomain && jQuery.support.cors) {
+            options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+        }
+    });
 
     // checks local storage to see if the user is over 21. if not then it runs the age checker modal.
     var locAge = localStorage.getItem('age');
     if (locAge >= 21) {
 
-    } else {
+    } 
+    else {
         // Age Check Modal
         function modals() {
             $('.ui.modal')
@@ -28,12 +29,17 @@ jQuery.ajaxPrefilter(function(options) {
             var ageInput = $(".birthday").val().trim();
             var inputLength = $(".birthday").val().length;
             console.log(inputLength);
-            localStorage.setItem("age", age);
+
             // checks to make sure the date entered is the proper length
             if (inputLength >= 8) {
                 // calculates the age from the date entered
                 var birthday = moment(ageInput, "MM/DD/YYYY");
                 var age = (moment(birthday).diff(moment(), "years") * -1);
+                localStorage.setItem("age", age);
+                database.ref().push({
+                    age: age,
+                    dateAdded: firebase.database.ServerValue.TIMESTAMP,
+                });
                 console.log(age);
                 console.log(moment(birthday).fromNow());
             }
@@ -55,7 +61,7 @@ jQuery.ajaxPrefilter(function(options) {
                 $('#content-page').css('background-color', 'red')
             };
         };
-    })
+    });
 
     // runs the age check when button is clicked, does the same thing as when the enter button is hit
     $(".ui.button").on("click", function () {
@@ -66,6 +72,10 @@ jQuery.ajaxPrefilter(function(options) {
             var birthday = moment(ageInput, "MM/DD/YYYY");
             var age = (moment(birthday).diff(moment(), "years") * -1);
             localStorage.setItem("age", age);
+            database.ref().push({
+                age: age,
+                dateAdded: firebase.database.ServerValue.TIMESTAMP,
+            });
             console.log(age);
             console.log(moment(birthday).fromNow());
         }
