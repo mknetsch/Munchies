@@ -11,7 +11,8 @@ $(function () {
     var locAge = localStorage.getItem('age');
     if (locAge >= 21) {
 
-    } else {
+    } 
+    else {
         // Age Check Modal
         function modals() {
             $('.ui.modal')

@@ -42,6 +42,12 @@ text-align: center;
 .ui.raised.segment{
     background:grey;
 }
+
+.retry {
+    font-size: 20px;
+    padding-left: 50px;
+    padding-top: 10px;
+}
  
 
 
